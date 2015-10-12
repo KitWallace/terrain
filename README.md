@@ -7,4 +7,5 @@ uses
    numpy
    PIL for image reading
    netCDF
-  
+   zipfile
+   scipy
