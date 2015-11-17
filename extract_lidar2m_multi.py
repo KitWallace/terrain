@@ -18,7 +18,6 @@
   
 """
 import sys
-import numpy as np
 from WGS84_to_UKGrid import *
 from scipy import *
     
@@ -26,7 +25,7 @@ def load_tile(tile) :  #return the elevation array for this tile
    prefix = tile[:2] 
    path="uklidar/"+tile+"_DTM_2m.asc"
    sys.stderr.write(path+"\n");
-   return  np.loadtxt(path,  skiprows=6)
+   return loadtxt(path,  skiprows=6)
 
 sys.stderr.write(sys.argv[0]+'\n')
 
