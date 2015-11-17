@@ -1,4 +1,35 @@
 from scipy import *
+
+OSletters = [
+["SV","SW","SX","SY","SZ","TV"],
+["","SR","SS","ST","SU","TQ","TR"],
+["","SM","SN","SO","SP","TL","TM"],
+["","","SH","SJ","SK","TF","TG"],
+["","","SC","SD","SE","TA"],
+["","NW","NX","NY","NZ","OV"],
+["","NR","NS","NT","NU"],
+["NL","NM","NN","NO"],
+["NF","NG","NH","NJ","NK"],
+["NA","NB","NC","ND"],
+["","HW","HX","HY","HZ"],
+["","","","HT","HU"],
+["","","","","HP"]
+]
+
+def OS_to_Grid(e,n) :
+     e1= e//10
+     n1 =n//10
+     prefix = OSletters[n1][e1]
+     tile=prefix + str(e -10*e1) + str(n-10*n1)
+     return tile.lower()
+
+def OS_to_Grid4(e,n) :
+     e1= e//100
+     n1 =n//100
+     prefix = OSletters[n1][e1]
+     tile=prefix + str(e -100*e1) + str(n-100*n1)
+     return tile.lower()
+
 # Hannah Fry http://hannahfry.co.uk/2012/02/01/converting-latitude-and-longitude-to-british-national-grid/
 def WGS84toOSGB36(lat, lon):
     #First convert to radians
