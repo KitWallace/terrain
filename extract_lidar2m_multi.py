@@ -21,30 +21,6 @@ import sys
 import numpy as np
 from WGS84_to_UKGrid import *
 from scipy import *
-
-OSletters = [
-["SV","SW","SX","SY","SZ","TV"],
-["","SR","SS","ST","SU","TQ","TR"],
-["","SM","SN","SO","SP","TL","TM"],
-["","","SH","SJ","SK","TF","TG"],
-["","","SC","SD","SE","TA"],
-["","NW","NX","NY","NZ","OV"],
-["","NR","NS","NT","NU"],
-["NL","NM","NN","NO"],
-["NF","NG","NH","NJ","NK"],
-["NA","NB","NC","ND"],
-["","HW","HX","HY","HZ"],
-["","","","HT","HU"],
-["","","","","HP"]
-]
-
-def OS_to_Grid4(e,n) :
-     e1= e//100
-     n1 =n//100
-     prefix = OSletters[n1][e1]
-     tile=prefix + str(e -100*e1) + str(n-100*n1)
-     return tile.lower()
-
     
 def load_tile(tile) :  #return the elevation array for this tile 
    prefix = tile[:2] 
