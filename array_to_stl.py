@@ -27,10 +27,11 @@ scale= float(sys.argv[5])
 base_mm = float(sys.argv[6])
 
 elev = loadtxt(sys.stdin)
+min= amin(elev)
+sys.stderr.write(', '.join(map(str, elev.shape ))+ "\n")
+sys.stderr.write('Min elev '+str(min)+ "\n")
 
-if base_m == -999 :
-   min= amin(elev)
-else:
+if base_m != -999 :
    min= base_m
 
 elev -= min
